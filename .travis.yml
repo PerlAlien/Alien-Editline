@@ -1,6 +1,8 @@
 language: perl
 
 install:
+  - sudo apt-get update
+  - sudo apt-get install libeditline-dev
   - cpanm -n Dist::Zilla
   - dzil authordeps --missing | cpanm -n
   - cpanm -n Test::CPAN::Changes Test::EOL Test::Fixme Test::NoTabs Test::Pod::Spelling::CommonMistakes Test::Spelling Test::Strict Test::Version Test::Vars || true
@@ -18,3 +20,7 @@ perl:
 
 script:
   - dzil test
+
+env:
+  - ALIEN_FORCE=1
+  - ALIEN_FORCE=0
