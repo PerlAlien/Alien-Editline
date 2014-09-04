@@ -29,7 +29,7 @@ In your L<FFI::Raw> script:
  use Alien::Editline;
  use FFI::Raw;
  
- my($dll) = Alien::Editline->new->dlls;
+ my($dll) = Alien::Editline->new->dynamic_libs;
  FFI::Raw->new($dll, '...', ...);
 
 =head1 DESCRIPTION
