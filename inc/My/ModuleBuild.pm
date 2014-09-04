@@ -10,7 +10,7 @@ sub new
   
   $args{alien_name} = 'libedit';
   $args{alien_build_commands} = [
-    '%c --with-pic --prefix=%s',
+    '%c --prefix=%s',
     'make',
   ];
   $args{alien_isolate_dynamic} = 1;
