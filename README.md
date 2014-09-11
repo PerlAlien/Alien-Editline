@@ -9,11 +9,10 @@ In your `Build.PL`:
     use Alien::Editline;
     use Module::Build;
     
-    my $alien = Alien::Editline->new;
     my $build = Module::Build->new(
       ...
-      extra_compiler_flags => $alien->cflags,
-      extra_linker_flags   => $alien->libs,
+      extra_compiler_flags => Alien::Editline->cflags,
+      extra_linker_flags   => Alien::Editline->libs,
       ...
     );
     
@@ -24,7 +23,7 @@ In your [FFI::Raw](https://metacpan.org/pod/FFI::Raw) script:
     use Alien::Editline;
     use FFI::Raw;
     
-    my($dll) = Alien::Editline->new->dynamic_libs;
+    my($dll) = Alien::Editline->dynamic_libs;
     FFI::Raw->new($dll, '...', ...);
 
 # DESCRIPTION
