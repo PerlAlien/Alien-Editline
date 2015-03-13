@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.03      2015-03-12 20:48:35 -0400
   - Bump Alien::Base requirement up to 0.014
 
 0.02      2014-09-11 16:55:51 -0400
