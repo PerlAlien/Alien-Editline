@@ -20,8 +20,10 @@ sub new
     location => '/editline',
     pattern  => qr{^libedit-.*\.tar\.gz$},
   };
+  $args{alien_stage_install} = 1;
   
   my $self = $class->SUPER::new(%args);
+  
   
   $self;
 }
