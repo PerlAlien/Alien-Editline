@@ -13,7 +13,9 @@ $modules{$_} = $_ for qw(
   Alien::Base
   Alien::Base::ModuleBuild
   File::ShareDir
+  Test::Alien
   Test::More
+  Test::Stream
 );
 
 
