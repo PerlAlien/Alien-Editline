@@ -1,4 +1,5 @@
 language: perl
+sudo: true
 
 install:
   - sudo apt-get update
