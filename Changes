@@ -2,6 +2,10 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.05      2016-01-28 14:16:23 -0500
+  - make configure requires for Alien::Base::ModuleBuild
+    instead of Alien::Base
+
 0.04      2015-04-22 07:18:20 -0400
   - use alien_stage_install
 
