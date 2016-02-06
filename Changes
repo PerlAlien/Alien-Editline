@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.06      2016-02-05 23:02:13 -0500
   - Prune experimental t/xs.t t/ffi.t test
 
 0.05      2016-01-28 14:16:23 -0500
