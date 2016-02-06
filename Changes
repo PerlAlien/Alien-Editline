@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Prune experimental t/xs.t t/ffi.t test
 
 0.05      2016-01-28 14:16:23 -0500
   - make configure requires for Alien::Base::ModuleBuild
