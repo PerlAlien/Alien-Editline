@@ -1,10 +1,6 @@
-use strict;
-use warnings;
-use Test::Stream -V1;
+use Test2::Bundle::Extended;
 use Test::Alien;
 use Alien::Editline;
-
-plan 3;
 
 alien_ok 'Alien::Editline';
 
@@ -15,6 +11,8 @@ xs_ok do { local $/; <DATA> }, with_subtest {
   EditLine::history_end($ptr);
   ok 1, 'history_end did not crash!';
 };
+
+done_testing;
 
 __DATA__
 
