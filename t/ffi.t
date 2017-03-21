@@ -2,6 +2,8 @@ use Test2::Bundle::Extended;
 use Test::Alien;
 use Alien::Editline;
 
+skip_all 'not used';
+
 alien_ok 'Alien::Editline';
 
 ffi_ok { symbols => ['history_init', 'history_end'] }, with_subtest {
