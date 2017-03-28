@@ -7,29 +7,7 @@ use base qw( Alien::Base );
 # ABSTRACT: Build and make available Editline (libedit)
 # VERSION
 
-=head1 SYNOPSIS
-
-In your C<Build.PL>:
-
- use Alien::Editline;
- use Module::Build;
- 
- my $build = Module::Build->new(
-   ...
-   extra_compiler_flags => Alien::Editline->cflags,
-   extra_linker_flags   => Alien::Editline->libs,
-   ...
- );
- 
- $build->create_build_script;
-
-In your L<FFI::Raw> script:
-
- use Alien::Editline;
- use FFI::Raw;
- 
- my($dll) = Alien::Editline->dynamic_libs;
- FFI::Raw->new($dll, '...', ...);
+# ALIEN SYNOPSIS
 
 =head1 DESCRIPTION
 
@@ -39,5 +17,7 @@ that comes with your operating system, otherwise it will download it from the In
 install it fro you.
 
 =cut
+
+# ALIEN SEE ALSO
 
 1;
