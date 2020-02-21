@@ -6,45 +6,51 @@ Build and make available Editline (libedit)
 
 In your Build.PL:
 
-    use Module::Build;
-    use Alien::Editline;
-    my $builder = Module::Build->new(
-      ...
-      configure_requires => {
-        'Alien::Editline' => '0',
-        ...
-      },
-      extra_compiler_flags => Alien::Editline->cflags,
-      extra_linker_flags   => Alien::Editline->libs,
-      ...
-    );
-    
-    $build->create_build_script;
+```perl
+use Module::Build;
+use Alien::Editline;
+my $builder = Module::Build->new(
+  ...
+  configure_requires => {
+    'Alien::Editline' => '0',
+    ...
+  },
+  extra_compiler_flags => Alien::Editline->cflags,
+  extra_linker_flags   => Alien::Editline->libs,
+  ...
+);
+
+$build->create_build_script;
+```
 
 In your Makefile.PL:
 
-    use ExtUtils::MakeMaker;
-    use Config;
-    use Alien::Editline;
-    
-    WriteMakefile(
-      ...
-      CONFIGURE_REQUIRES => {
-        'Alien::Editline' => '0',
-      },
-      CCFLAGS => Alien::Editline->cflags . " $Config{ccflags}",
-      LIBS    => [ Alien::Editline->libs ],
-      ...
-    );
+```perl
+use ExtUtils::MakeMaker;
+use Config;
+use Alien::Editline;
+
+WriteMakefile(
+  ...
+  CONFIGURE_REQUIRES => {
+    'Alien::Editline' => '0',
+  },
+  CCFLAGS => Alien::Editline->cflags . " $Config{ccflags}",
+  LIBS    => [ Alien::Editline->libs ],
+  ...
+);
+```
 
 In your [FFI::Platypus](https://metacpan.org/pod/FFI::Platypus) script or module:
 
-    use FFI::Platypus;
-    use Alien::Editline;
-    
-    my $ffi = FFI::Platypus->new(
-      lib => [ Alien::Editline->dynamic_libs ],
-    );
+```perl
+use FFI::Platypus;
+use Alien::Editline;
+
+my $ffi = FFI::Platypus->new(
+  lib => [ Alien::Editline->dynamic_libs ],
+);
+```
 
 # DESCRIPTION
 
