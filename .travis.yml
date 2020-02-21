@@ -1,29 +1,49 @@
-language: perl
-sudo: true
+language: minimal
+dist: xenial
+services:
+  - docker
+
+before_install:
+  - curl https://raw.githubusercontent.com/plicease/cip/master/bin/travis-bootstrap | bash
+  - cip before-install
 
 install:
-  - sudo apt-get update
-  - sudo apt-get install libedit-dev
-  - perlbrew list
-  - cpanm App::af
-  - af missing | cpanm -n
-  - dzil authordeps --missing | cpanm -n
-  - dzil listdeps --missing | cpanm -n
-
-perl:
-  - "5.14"
-  - "5.16"
-  - "5.18"
-  - "5.20"
-  - "5.22"
-  - "5.24"
+  - cip diag
+  - cip install
 
 script:
-  - dzil test
+  - cip script
 
-env:
-  global:
-    - ALIEN_BASE_NO_ABMB=1
-  matrix:
-    - ALIEN_FORCE=1
-    - ALIEN_FORCE=0
+jobs:
+  include:
+    - env: CIP_TAG=5.31 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.31 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.30 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.30 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.28 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.28 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.26 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.26 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.24 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.24 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.22 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.22 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.20 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.20 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.18 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.18 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.16 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.16 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.14 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.14 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.12 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.12 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.10 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.10 CIP_ENV=ALIEN_INSTALL_TYPE=system
+    - env: CIP_TAG=5.8 CIP_ENV=ALIEN_INSTALL_TYPE=share
+    - env: CIP_TAG=5.8 CIP_ENV=ALIEN_INSTALL_TYPE=system
+
+cache:
+  directories:
+    - "$HOME/.cip"
+
