@@ -1,4 +1,4 @@
-# Alien::Editline [![Build Status](https://secure.travis-ci.org/plicease/Alien-Editline.png)](http://travis-ci.org/plicease/Alien-Editline)
+# Alien::Editline [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-Editline.png)](http://travis-ci.org/Perl5-Alien/Alien-Editline)
 
 Build and make available Editline (libedit)
 
