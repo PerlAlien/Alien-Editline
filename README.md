@@ -38,7 +38,7 @@ my $builder = Module::Build->new(
 $build->create_build_script;
 ```
 
-In your [FFI::Platypus](https://metacpan.org/pod/FFI%3A%3APlatypus) script or module:
+In your [FFI::Platypus](https://metacpan.org/pod/FFI::Platypus) script or module:
 
 ```perl
 use FFI::Platypus;
@@ -58,11 +58,15 @@ install it fro you.
 
 # SEE ALSO
 
-[Alien](https://metacpan.org/pod/Alien), [Alien::Base](https://metacpan.org/pod/Alien%3A%3ABase), [Alien::Build::Manual::AlienUser](https://metacpan.org/pod/Alien%3A%3ABuild%3A%3AManual%3A%3AAlienUser)
+[Alien](https://metacpan.org/pod/Alien), [Alien::Base](https://metacpan.org/pod/Alien::Base), [Alien::Build::Manual::AlienUser](https://metacpan.org/pod/Alien::Build::Manual::AlienUser)
 
 # AUTHOR
 
-Graham Ollis <plicease@cpan.org>
+Author: Graham Ollis <plicease@cpan.org>
+
+Contributors:
+
+Tom Hukins (TOMHUKINS)
 
 # COPYRIGHT AND LICENSE
 
