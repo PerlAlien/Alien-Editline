@@ -4,44 +4,41 @@ Build and make available Editline (libedit)
 
 # SYNOPSIS
 
+In your Makefile.PL:
+
+```perl
+use ExtUtils::MakeMaker;
+use Alien::Base::Wrapper ();
+
+WriteMakefile(
+  Alien::Base::Wrapper->new('Alien::Editline')->mm_args2(
+    # MakeMaker args
+    NAME => 'Kafka::Librd',
+    ...
+  ),
+);
+```
+
 In your Build.PL:
 
 ```perl
 use Module::Build;
-use Alien::Editline;
+use Alien::Base::Wrapper qw( Alien::Editline !export );
+
 my $builder = Module::Build->new(
   ...
   configure_requires => {
     'Alien::Editline' => '0',
     ...
   },
-  extra_compiler_flags => Alien::Editline->cflags,
-  extra_linker_flags   => Alien::Editline->libs,
+  Alien::Base::Wrapper->mb_args,
   ...
 );
 
 $build->create_build_script;
 ```
 
-In your Makefile.PL:
-
-```perl
-use ExtUtils::MakeMaker;
-use Config;
-use Alien::Editline;
-
-WriteMakefile(
-  ...
-  CONFIGURE_REQUIRES => {
-    'Alien::Editline' => '0',
-  },
-  CCFLAGS => Alien::Editline->cflags . " $Config{ccflags}",
-  LIBS    => [ Alien::Editline->libs ],
-  ...
-);
-```
-
-In your [FFI::Platypus](https://metacpan.org/pod/FFI::Platypus) script or module:
+In your [FFI::Platypus](https://metacpan.org/pod/FFI%3A%3APlatypus) script or module:
 
 ```perl
 use FFI::Platypus;
@@ -61,7 +58,7 @@ install it fro you.
 
 # SEE ALSO
 
-[Alien](https://metacpan.org/pod/Alien), [Alien::Base](https://metacpan.org/pod/Alien::Base), [Alien::Build::Manual::AlienUser](https://metacpan.org/pod/Alien::Build::Manual::AlienUser)
+[Alien](https://metacpan.org/pod/Alien), [Alien::Base](https://metacpan.org/pod/Alien%3A%3ABase), [Alien::Build::Manual::AlienUser](https://metacpan.org/pod/Alien%3A%3ABuild%3A%3AManual%3A%3AAlienUser)
 
 # AUTHOR
 
