@@ -1,4 +1,4 @@
-# Alien::Editline [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-Editline.png)](http://travis-ci.org/Perl5-Alien/Alien-Editline)
+# Alien::Editline [![Build Status](https://travis-ci.org/PerlAlien/Alien-Editline.svg)](http://travis-ci.org/PerlAlien/Alien-Editline)
 
 Build and make available Editline (libedit)
 
@@ -13,7 +13,7 @@ use Alien::Base::Wrapper ();
 WriteMakefile(
   Alien::Base::Wrapper->new('Alien::Editline')->mm_args2(
     # MakeMaker args
-    NAME => 'Kafka::Librd',
+    NAME => 'My::XS',
     ...
   ),
 );
