@@ -17,10 +17,15 @@ $modules{$_} = $_ for qw(
   ExtUtils::MakeMaker
   Test2::V0
   Test::Alien
+  Test::Alien::Diag
   Test::More
 );
 
-
+$post_diag = sub {
+  require Test::Alien::Diag;
+  require Alien::Editline;
+  Test::Alien::Diag::alien_diag('Alien::Editline');
+};
 
 my @modules = sort keys %modules;
 
