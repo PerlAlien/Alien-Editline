@@ -1,4 +1,4 @@
-# Alien::Editline ![linux](https://github.com/PerlAlien/Alien-Editline/workflows/linux/badge.svg)
+# Alien::Editline ![linux](https://github.com/PerlAlien/Alien-Editline/workflows/linux/badge.svg) ![macos](https://github.com/PerlAlien/Alien-Editline/workflows/macos/badge.svg)
 
 Build and make available Editline (libedit)
 
